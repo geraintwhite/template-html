@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/grit96/template-html#readme",
   "dependencies": {
-    "xml2js": "^0.4.9"
+    "xml2js": "^0.4.9",
+    "ul": "~5.0.0"
   }
 }
