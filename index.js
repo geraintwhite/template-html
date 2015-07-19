@@ -1,4 +1,3 @@
-var xml2js = require('xml2js');
 var path = require('path');
 var fs = require('fs');
 var ul = require('ul');
@@ -21,7 +20,7 @@ var Templator = function(options) {
 
   options.templateFile = path.resolve(options.templateFile);
 
-  this.template = fs.readFileSync(options.templateFile);
+  this.template = fs.readFileSync(options.templateFile).toString();
   this.options = options;
 };
 
@@ -30,8 +29,20 @@ Templator.prototype.processFile = function (contentFile) {
 };
 
 Templator.prototype.processContent = function (content) {
-  xml2js.parseString(this.template, function(err, result) {
-    console.log(result);
+  var tag = this.options.tag;
+  var regMark = new RegExp('<!--\\s*' + tag + ':([^\\s]+)\\s*-->', 'g');
+
+  function genRegex(name) {
+    return new RegExp(
+      '<!--\\s*' + tag + ':' + name + '\\s*-->' +
+      '((.|[\\r\\n])+)' +
+      '<!--\\s*\\/' + tag + ':' + name + '\\s*-->'
+    );
+  }
+
+  return this.template.replace(regMark, function (match, name) {
+    var find = content.match(genRegex(name));
+    return find ? find[1] : match;
   });
 };
 

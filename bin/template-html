@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+var Templator = require('../'),
+    pkg = require('../package'),
+    fs = require('fs'),
+    path = require('path'),
+    argv = require('minimist')(process.argv.slice(2));
+
+
+var USAGE = 'Usage: ' + pkg.name + ' content.html -t template.html [options]';
+
+if (argv.v || argv.version) {
+
+  console.log(pkg.name + '@' + pkg.version);
+
+} else if (argv.h || argv.help) {
+
+  console.log(USAGE + '\n');
+  console.log('-h|--help      display this help message');
+  console.log('-v|--version   display the version number');
+  console.log('-o|--output    directory to output processed HTML');
+  console.log('-t|--template  template file to use');
+  console.log('--tag          keyword to use be used in HTML placeholder comments');
+
+} else if (argv._.length && (argv.t || argv.template)) {
+
+  var output = argv.o || argv.output || './';
+  var templateFile = argv.t || argv.template;
+  var tag = argv.tag;
+  var files = argv._;
+
+  var template = new Templator({
+    tag: tag,
+    templateFile: templateFile
+  });
+
+  files.forEach(function (file) {
+    var content = template.processFile(file);
+    var filepath = path.resolve(output, path.basename(file));
+
+    fs.mkdir(output, function () {
+      fs.writeFile(filepath, content);
+    });
+  });
+
+} else {
+
+  console.log(USAGE);
+
+}
