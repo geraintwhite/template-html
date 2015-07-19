@@ -1,14 +1,14 @@
 {
   "name": "template-html",
   "version": "0.0.1",
-  "description": "Static HTML templating with XML content files",
+  "description": "Generate static HTML files from templates and content files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/grit96/template-html.git"
+    "url": "git@github.com:grit96/template-html.git"
   },
   "author": "Geraint White <mail@geraintwhite.co.uk>",
   "license": "MIT",
