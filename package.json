@@ -3,6 +3,9 @@
   "version": "0.0.3",
   "description": "Generate static HTML files from templates and content files",
   "main": "index.js",
+  "bin": {
+    "template-html": "./bin/template-html"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
