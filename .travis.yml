@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - '0.10'
+  - '0.11'
+  - '0.12'
+
+deploy:
+  provider: npm
+  email: mail@geraintwhite.co.uk
+  api_key:
+    secure: ExyzENldTXQb2m38Kyn1aT2sGE9rwXKqP+GOADeCk5fpD8EDSWe8G1h4PBFPGECpPZ6wYUieKbabskMT8NC2H9OcHWE7PNCnMn/Bg5qDgij907NJGs7jef9wvnFojUO5q9yexOsp7s5T1cvivwoAqD1XazZUqUuyZu6VnnYvNtEUB9L1lQWMPIT8iTqH0oof/rdjiy3b1dJSWgflgTU0HWoq3wEL9N9Y2liDz5i5b1dHWSMwgGL+j9njSkD1Ppk0921l7fAfq8pquI8Xd5YJXyWmURMNea/pZSUOnI8xI788iWgA4pKmLYkFzA6vWuIcxGkg5xh1DqsHDRkoz1V6xxRgg6t1P8UBHrKp1XXpqmxIHbaF6vFcdbdaqZPnF/Ishn4CJI2gEO0Naf7GF/MvU5J7XdBxGwkX50BYVGe5tLSaLn5g4xJtgmdRKqV5Ixl0ONMq2wMMeLelWro57HmBgcYg4OU2H5s+vKfy8SNAIfswqNf40ERkhp4JTZjX69OP4RImFZJytzYcp2reJCl5Ihpv3dx/DhDIUcKtdTrOdAGt4qlSDwPP7cz/aBHSrfTOIBDM0V0Btv4pjbSi83b17T+j3/3iJrp44OfIotoMeWKSX7E84OH9WiZOYR9CmwShHJFskRhal6Lvtw7Auxi1ew/vYMVSNmmfQJ8Vt7Rab/I=
+  on:
+    tags: true
+    repo: grit96/template-html
