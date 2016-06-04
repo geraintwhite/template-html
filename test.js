@@ -5,10 +5,23 @@ var test = require('tape'),
 
 
 test('Templator.processFile', function(t) {
-    var template = new Templator('examples/template.html');
-    var output = template.processFile('examples/index.html');
-    var expected = fs.readFileSync('examples/output.html').toString();
+    var exampleDir = 'examples/simple-template/';
+
+    var template = new Templator(exampleDir + 'sources/template.html');
+    var output = template.processFile(exampleDir + 'sources/index.html');
+    var expected = fs.readFileSync(exampleDir + 'expected-output/index.html').toString();
 
     t.equal(output, expected, 'processed content should match expected');
     t.end();
 });
+
+// test('Templator.processFile', function(t) {
+//  var exampleDir = 'examples/nested-template/';
+
+//     var template = new Templator(exampleDir + 'sources/template.html');
+//     var output = template.processFile(exampleDir + 'sources/index.html');
+//     var expected = fs.readFileSync(exampleDir + 'expected-output/index.html').toString();
+
+//     t.equal(output, expected, 'processed content should match expected');
+//     t.end();
+// });
