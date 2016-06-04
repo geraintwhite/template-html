@@ -20,8 +20,15 @@ var Templator = function(options) {
     };
   }
 
+  // default tag
   options = ul.merge(options, {
     tag: 'build'
+  });
+
+  // default build tag and define tag
+  options = ul.merge(options, {
+    buildTag: options.tag,
+    defineTag: options.tag
   });
 
   if (typeof options.templateFile !== 'string') {
@@ -55,14 +62,15 @@ Templator.prototype.processFile = function (contentFile) {
  */
 
 Templator.prototype.processContent = function (content) {
-  var tag = this.options.tag;
-  var regMark = new RegExp('<!--\\s*' + tag + ':([^\\s]+)\\s*-->', 'g');
+  var buildTag = this.options.buildTag;
+  var defineTag = this.options.defineTag;
+  var regMark = new RegExp('<!--\\s*' + buildTag + ':([^\\s]+)\\s*-->', 'g');
 
   function genRegex(name) {
     return new RegExp(
-      '<!--\\s*' + tag + ':' + name + '\\s*-->' +
+      '<!--\\s*' + defineTag + ':' + name + '\\s*-->' +
       '((.|[\\r\\n])+)' +
-      '<!--\\s*\\/' + tag + ':' + name + '\\s*-->'
+      '<!--\\s*\\/' + defineTag + ':' + name + '\\s*-->'
     );
   }
 
