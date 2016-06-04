@@ -15,13 +15,17 @@ test('Templator.processFile', function(t) {
     t.end();
 });
 
-// test('Templator.processFile', function(t) {
-//  var exampleDir = 'examples/nested-template/';
+test('Templator partial templates', function(t) {
+ var exampleDir = 'examples/partial-template/';
 
-//     var template = new Templator(exampleDir + 'sources/template.html');
-//     var output = template.processFile(exampleDir + 'sources/index.html');
-//     var expected = fs.readFileSync(exampleDir + 'expected-output/index.html').toString();
+    var template1 = new Templator(exampleDir + 'sources/index.html');
+    var template2 = new Templator(exampleDir + 'sources/template.html');
 
-//     t.equal(output, expected, 'processed content should match expected');
-//     t.end();
-// });
+    var output1 = template1.processFile(exampleDir + 'sources/content.html');
+    var output2 = template2.processContent(output1);
+
+    var expected = fs.readFileSync(exampleDir + 'expected-output/content.html').toString();
+
+    t.equal(output2, expected, 'processed content should match expected');
+    t.end();
+});
