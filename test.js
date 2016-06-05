@@ -5,10 +5,27 @@ var test = require('tape'),
 
 
 test('Templator.processFile', function(t) {
-    var template = new Templator('examples/template.html');
-    var output = template.processFile('examples/index.html');
-    var expected = fs.readFileSync('examples/output.html').toString();
+    var exampleDir = 'examples/simple-template/';
+
+    var template = new Templator(exampleDir + 'sources/template.html');
+    var output = template.processFile(exampleDir + 'sources/index.html');
+    var expected = fs.readFileSync(exampleDir + 'expected-output/index.html').toString();
 
     t.equal(output, expected, 'processed content should match expected');
+    t.end();
+});
+
+test('Templator partial templates', function(t) {
+ var exampleDir = 'examples/partial-template/';
+
+    var template1 = new Templator(exampleDir + 'sources/index.html');
+    var template2 = new Templator(exampleDir + 'sources/template.html');
+
+    var output1 = template1.processFile(exampleDir + 'sources/content.html');
+    var output2 = template2.processContent(output1);
+
+    var expected = fs.readFileSync(exampleDir + 'expected-output/content.html').toString();
+
+    t.equal(output2, expected, 'processed content should match expected');
     t.end();
 });
