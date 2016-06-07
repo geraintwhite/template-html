@@ -29,3 +29,26 @@ test('Templator partial templates', function(t) {
     t.equal(output2, expected, 'processed content should match expected');
     t.end();
 });
+
+test('Templator custom tags', function(t) {
+ var exampleDir = 'examples/custom-tags/';
+
+    var template1 = new Templator({
+        buildTag: 'build',
+        defineTag: 'define',
+        templateFile: exampleDir + 'sources/index.html'
+    });
+    var template2 = new Templator({
+        buildTag: 'build',
+        defineTag: 'define',
+        templateFile: exampleDir + 'sources/template.html'
+    });
+
+    var output1 = template1.processFile(exampleDir + 'sources/content.html');
+    var output2 = template2.processContent(output1);
+
+    var expected = fs.readFileSync(exampleDir + 'expected-output/content.html').toString();
+
+    t.equal(output2, expected, 'processed content should match expected');
+    t.end();
+});
