@@ -23,7 +23,7 @@ Usage: template-html content.html -t template.html [options]
 -t|--template  template file to use
 --tag          keyword to use be used in HTML placeholder define and build comments
 --build-tag    keyword to use be used in HTML placeholder build comments (overrides --tag)
---define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)==
+--define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)
 ```
 
 ## Documentation
