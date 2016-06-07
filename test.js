@@ -4,7 +4,7 @@ var test = require('tape'),
     Templator = require('./');
 
 
-test('Templator.processFile', function(t) {
+test('Templator simple template', function(t) {
     var exampleDir = 'examples/simple-template/';
 
     var template = new Templator(exampleDir + 'sources/template.html');
@@ -16,7 +16,7 @@ test('Templator.processFile', function(t) {
 });
 
 test('Templator partial templates', function(t) {
- var exampleDir = 'examples/partial-template/';
+    var exampleDir = 'examples/partial-template/';
 
     var template1 = new Templator(exampleDir + 'sources/index.html');
     var template2 = new Templator(exampleDir + 'sources/template.html');
@@ -31,7 +31,7 @@ test('Templator partial templates', function(t) {
 });
 
 test('Templator custom tags', function(t) {
- var exampleDir = 'examples/custom-tags/';
+    var exampleDir = 'examples/custom-tags/';
 
     var template1 = new Templator({
         buildTag: 'build',
