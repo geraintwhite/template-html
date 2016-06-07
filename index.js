@@ -9,8 +9,10 @@ var ul = require('ul');
  * @function
  * @param {Object} options An object containing the following fields:
  *
- *  - `templateFile` (String): Path to template file to use.
- *  - `tag` (String): Keyword to use be used in HTML placeholder comments.
+ *  - `templateFile` (String): Path to template file to use
+ *  - `tag` (String): Keyword to use be used in HTML placeholder comments
+ *  - `buildTag` (String): Keyword to use be used in HTML placeholder build comments (overrides --tag)
+ *  - `defineTag` (String): Keyword to use be used in HTML placeholder define comments (overrides --tag)
  */
 
 var Templator = function(options) {
@@ -22,13 +24,13 @@ var Templator = function(options) {
 
   // default tag
   options = ul.merge(options, {
-    tag: 'build'
+    tag: 'build',
   });
 
   // default build tag and define tag
   options = ul.merge(options, {
     buildTag: options.tag,
-    defineTag: options.tag
+    defineTag: options.tag,
   });
 
   if (typeof options.templateFile !== 'string') {

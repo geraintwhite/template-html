@@ -21,7 +21,9 @@ Usage: template-html content.html -t template.html [options]
 -v|--version   display the version number
 -o|--output    directory to output processed HTML
 -t|--template  template file to use
---tag          keyword to use be used in HTML placeholder comments
+--tag          keyword to use be used in HTML placeholder define and build comments
+--build-tag    keyword to use be used in HTML placeholder build comments (overrides --tag)
+--define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)==
 ```
 
 ## Documentation
