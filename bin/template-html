@@ -20,17 +20,24 @@ if (argv.v || argv.version) {
   console.log('-v|--version   display the version number');
   console.log('-o|--output    directory to output processed HTML');
   console.log('-t|--template  template file to use');
-  console.log('--tag          keyword to use be used in HTML placeholder comments');
+  console.log('--tag          keyword to use be used in HTML placeholder define and build comments');
+  console.log('--build-tag    keyword to use be used in HTML placeholder build comments (overrides --tag)');
+  console.log('--define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)');
 
 } else if (argv._.length && (argv.t || argv.template)) {
 
   var output = argv.o || argv.output || './';
   var templateFile = argv.t || argv.template;
   var tag = argv.tag;
+  var buildTag = argv['build-tag'];
+  var defineTag = argv['define-tag'];
+
   var files = argv._;
 
   var template = new Templator({
     tag: tag,
+    buildTag: buildTag,
+    defineTag: defineTag,
     templateFile: templateFile
   });
 
