@@ -1,7 +1,7 @@
 var test = require('tape'),
     fs = require('fs'),
-    path = require('path'),
-    Templator = require('./');
+    Templator = require('./'),
+    cli = require('./cli');
 
 
 test('Templator simple template', function(t) {
@@ -50,5 +50,28 @@ test('Templator custom tags', function(t) {
     var expected = fs.readFileSync(exampleDir + 'expected-output/content.html').toString();
 
     t.equal(output2, expected, 'processed content should match expected');
+    t.end();
+});
+
+test('Templator preserve directory structure', function(t) {
+    var exampleDir = 'examples/preserve-tree/';
+
+    process.chdir(exampleDir);
+
+    cli({
+      output: 'build',
+      preserveTree: true,
+      templateFile: 'sources/template.html',
+      files: ['sources/file1/index.html', 'sources/file2/index.html'],
+    });
+
+    var output1 = fs.readFileSync('build/sources/file1/index.html').toString();
+    var output2 = fs.readFileSync('build/sources/file2/index.html').toString();
+
+    var expected1 = fs.readFileSync('expected-output/sources/file1/index.html').toString();
+    var expected2 = fs.readFileSync('expected-output/sources/file2/index.html').toString();
+
+    t.equal(output1, expected1, 'processed content should match expected');
+    t.equal(output2, expected2, 'processed content should match expected');
     t.end();
 });

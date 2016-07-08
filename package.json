@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/grit96/template-html#readme",
   "dependencies": {
-    "ul": "~5.2.2",
-    "minimist": "~1.2.0"
+    "minimist": "~1.2.0",
+    "mkdirp": "^0.5.1",
+    "ul": "~5.2.2"
   },
   "devDependencies": {
     "tape": "^4.5.1"

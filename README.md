@@ -24,6 +24,7 @@ Usage: template-html content.html -t template.html [options]
 --tag          keyword to use be used in HTML placeholder define and build comments
 --build-tag    keyword to use be used in HTML placeholder build comments (overrides --tag)
 --define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)
+--preserve-tree  output files will keep the same directory structure as the source files
 ```
 
 ## Documentation

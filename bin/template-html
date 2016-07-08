@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-var Templator = require('../'),
+var cli = require('../cli'),
     pkg = require('../package'),
-    fs = require('fs'),
-    path = require('path'),
     argv = require('minimist')(process.argv.slice(2));
 
 
@@ -16,39 +14,28 @@ if (argv.v || argv.version) {
 } else if (argv.h || argv.help) {
 
   console.log(USAGE + '\n');
-  console.log('-h|--help      display this help message');
-  console.log('-v|--version   display the version number');
-  console.log('-o|--output    directory to output processed HTML');
-  console.log('-t|--template  template file to use');
-  console.log('--tag          keyword to use be used in HTML placeholder define and build comments');
-  console.log('--build-tag    keyword to use be used in HTML placeholder build comments (overrides --tag)');
-  console.log('--define-tag   keyword to use be used in HTML placeholder define comments (overrides --tag)');
+  console.log('-h|--help        display this help message');
+  console.log('-v|--version     display the version number');
+  console.log('-o|--output      directory to output processed HTML');
+  console.log('-t|--template    template file to use');
+  console.log('--tag            keyword to use be used in HTML placeholder define and build comments');
+  console.log('--build-tag      keyword to use be used in HTML placeholder build comments (overrides --tag)');
+  console.log('--define-tag     keyword to use be used in HTML placeholder define comments (overrides --tag)');
+  console.log('--preserve-tree  output files will keep the same directory structure as the source files');
 
 } else if (argv._.length && (argv.t || argv.template)) {
 
-  var output = argv.o || argv.output || './';
-  var templateFile = argv.t || argv.template;
-  var tag = argv.tag;
-  var buildTag = argv['build-tag'];
-  var defineTag = argv['define-tag'];
+  var options = {
+    output: argv.o || argv.output || './',
+    templateFile: argv.t || argv.template,
+    preserveTree: argv['preserve-tree'],
+    tag: argv.tag,
+    buildTag: argv['build-tag'],
+    defineTag: argv['define-tag'],
+    files: argv._,
+  };
 
-  var files = argv._;
-
-  var template = new Templator({
-    tag: tag,
-    buildTag: buildTag,
-    defineTag: defineTag,
-    templateFile: templateFile
-  });
-
-  files.forEach(function (file) {
-    var content = template.processFile(file);
-    var filepath = path.resolve(output, path.basename(file));
-
-    fs.mkdir(output, function () {
-      fs.writeFile(filepath, content);
-    });
-  });
+  cli(options);
 
 } else {
 
