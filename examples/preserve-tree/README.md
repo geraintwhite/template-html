@@ -6,13 +6,13 @@ This example demonstrates the use of the `preserveTree` option to copy the sourc
 
 In a codebase with this example structure, the following syntax would be used to build from the command line:
 
-```
-template-html --preserve-tree sources/file{1,2}/index.html -t sources/template.html -o build/
+```sh
+$ template-html --preserve-tree sources/file{1,2}/index.html -t sources/template.html -o build/
 ```
 
 or analogously via node:
 
-```
+```js
 var fs = require('fs'),
     path = require('path'),
     Templator = require('./');

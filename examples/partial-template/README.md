@@ -6,14 +6,14 @@ This example runs a source file through a partial template (a file that defines 
 
 In a codebase with this example structure, the following syntax would be used to perform a 2 step build from the command line:
 
-```
-template-html sources/content.html -t sources/index.html -o build/
-template-html build/content.html -t sources/template.html -o build/
+```sh
+$ template-html sources/content.html -t sources/index.html -o build/
+$ template-html build/content.html -t sources/template.html -o build/
 ```
 
 or analogously via node:
 
-```
+```js
 var fs = require('fs'),
     path = require('path'),
     Templator = require('./');

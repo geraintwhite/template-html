@@ -8,13 +8,15 @@ Generate static HTML files from templates and content files. [gulp-template-html
 
 
 ## Installation
+
 ```sh
 $ npm install -g template-html
 ```
 
+
 ## Help
 
-```
+```sh
 Usage: template-html content.html -t template.html [options]
 
 -h|--help      display this help message
@@ -27,6 +29,7 @@ Usage: template-html content.html -t template.html [options]
 --preserve-tree  output files will keep the same directory structure as the source files
 ```
 
+
 ## Sample usage
 
 For the most basic use case of this plugin, create a template file with
@@ -37,7 +40,8 @@ For more details and more complex examples take a look at the
 [examples](./examples) directory.
 
 `template.html`:
-```
+
+```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -52,13 +56,15 @@ For more details and more complex examples take a look at the
 ```
 
 `content.html`:
-```
+
+```html
 <!-- build:title -->Lorem ipsum<!-- /build:title -->
 <!-- build:content -->
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 <!-- /build:content -->
 ```
+
 
 ## Documentation
 
@@ -102,4 +108,5 @@ Generate HTML from template file and content file
 
 
 ## License
+
 See the [LICENSE](./LICENSE) file.

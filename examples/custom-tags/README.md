@@ -6,14 +6,14 @@ This example uses the `defineTag` and `buildTag` parameters to set separate tags
 
 In a codebase with this example structure, the following syntax would be used to perform a 2 step build from the command line:
 
-```
-template-html sources/content.html -t sources/index.html -o build/ --define-tag define --build-tag build
-template-html build/content.html -t sources/template.html -o build/ --define-tag define --build-tag build
+```sh
+$ template-html sources/content.html -t sources/index.html -o build/ --define-tag define --build-tag build
+$ template-html build/content.html -t sources/template.html -o build/ --define-tag define --build-tag build
 ```
 
 or analogously via node:
 
-```
+```js
 var fs = require('fs'),
     path = require('path'),
     Templator = require('./');
