@@ -27,6 +27,39 @@ Usage: template-html content.html -t template.html [options]
 --preserve-tree  output files will keep the same directory structure as the source files
 ```
 
+## Sample usage
+
+For the most basic use case of this plugin, create a template file with
+placeholders and a file containing the content that should replace the
+placeholders in the template.
+
+For more details and more complex examples take a look at the
+[examples](./examples) directory.
+
+`template.html`:
+```
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title><!-- build:title --></title>
+</head>
+<body>
+  <div id="content"><!-- build:content --></div>
+</body>
+</html>
+```
+
+`content.html`:
+```
+<!-- build:title -->Lorem ipsum<!-- /build:title -->
+<!-- build:content -->
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+<!-- /build:content -->
+```
+
 ## Documentation
 
 ### `Templator(options)`
