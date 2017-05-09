@@ -33,8 +33,8 @@ For the most basic use case of this plugin, create a template file with
 placeholders and a file containing the content that should replace the
 placeholders in the template.
 
-For more details and more complex examples take a look at the `examples`
-directory.
+For more details and more complex examples take a look at the
+[examples](./examples) directory.
 
 `template.html`:
 ```
