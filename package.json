@@ -21,7 +21,7 @@
   "homepage": "https://github.com/grit96/template-html#readme",
   "dependencies": {
     "minimist": "~1.2.5",
-    "mkdirp": "^1.0.3",
+    "mkdirp": "^1.0.4",
     "ul": "~5.2.2"
   },
   "devDependencies": {
