@@ -22,7 +22,7 @@
   "dependencies": {
     "minimist": "~1.2.5",
     "mkdirp": "^1.0.4",
-    "ul": "~5.2.2"
+    "ul": "~5.2.15"
   },
   "devDependencies": {
     "tape": "^4.5.1"
