@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/grit96/template-html#readme",
   "dependencies": {
-    "minimist": "~1.2.5",
+    "minimist": "~1.2.6",
     "mkdirp": "^1.0.4",
     "ul": "~5.2.15"
   },
