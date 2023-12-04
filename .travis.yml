@@ -11,4 +11,4 @@ deploy:
     secure: BUD4Y0zX+w7+X8QrS0k01rERAKQks7dbHr/ur78JJXa5vT/5Bs6q/ZUpd0Pi81na8pabuJoUCwu6jLbt25bFmstNfT8nK+1Sj5TLo6HSV/lnnd//Jd0dxHo1vZeyfmXL8l/xlB+46PW28Msqv5ROdE6W4B6sasp9fr9PJZjp6uvwzcFYoriwD3CEeBb2/kk0PeRhHDrQYnrKp0kpxpjYzNMlSXRa7ez2xKdrd6X5brv3KFL3qwAOD25Xe6Y8SqB5OsJ4Twrri2nKhDlD+cKHdcTWRk3l0HmXAnXqQ48Legdq9koL1+haM8mQEjU1fAPzUZQXNn7g/gEs3zyR+L/IqWhLHg448zp2JtmJs2Fzx+49GIG7mzxvT1+MjNifLfGGaZUUQwHC4yjqSitifKN8tLs3PW7Zoq6on3ZpzVGZosZPDj8Rq6HK5G+OPFr+ppdlUdQ33/VLbMwVpOdJfYF/MUZEWMYOWGRo1QquaxEoSyrfoVDms18/yc2jTL2UsOe7y66HdpGJXKMLecjNzDiqKStWHDjWnB7GFe3H8UKQ2pB+zenSj1ZsbnCbonA78KajSlKQP0zKPlQJY1HmubDWHy+MSdmJGuiN6DWg6M2I8hveaEvGtoUbY4SJTIuYrOilox8vMYcGk0vaFCSYcqXa8GY6FUFy5n9Exf1Jgk3kuVU=
   on:
     tags: true
-    repo: grit96/template-html
+    repo: geraintwhite/template-html
