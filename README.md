@@ -1,10 +1,9 @@
 # template-html
 
 [![NPM Version](https://img.shields.io/npm/v/template-html.svg)](https://www.npmjs.com/package/template-html)
-[![Build Status](https://img.shields.io/travis/grit96/template-html.svg)](https://travis-ci.org/grit96/template-html)
-[![Dependency Status](https://img.shields.io/david/grit96/template-html.svg)](https://david-dm.org/grit96/template-html)
+[![Build Status](https://img.shields.io/travis/geraintwhite/template-html.svg)](https://travis-ci.org/geraintwhite/template-html)
 
-Generate static HTML files from templates and content files. [gulp-template-html](https://github.com/grit96/gulp-template-html) is a Gulp plugin for this with example usage.
+Generate static HTML files from templates and content files. [gulp-template-html](https://github.com/geraintwhite/gulp-template-html) is a Gulp plugin for this with example usage.
 
 
 ## Installation
